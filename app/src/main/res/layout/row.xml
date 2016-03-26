@@ -38,21 +38,28 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Medium Text"
-                android:id="@+id/user_name" />
+                android:id="@+id/pr_price" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Small Text"
-                android:id="@+id/user_pass" />
+                android:id="@+id/pr_cat" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Small Text"
-                android:id="@+id/img_loc" />
+                android:id="@+id/pr_loc" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Small Text"
+                android:id="@+id/pr_contact" />
         </LinearLayout>
 
     </LinearLayout>

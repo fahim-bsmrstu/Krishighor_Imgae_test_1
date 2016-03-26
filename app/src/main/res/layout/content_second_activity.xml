@@ -22,15 +22,15 @@
         android:id="@+id/nname"
         android:layout_marginTop="177dp"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/n_user_name"
-        android:layout_alignStart="@+id/n_user_name" />
+        android:layout_alignLeft="@+id/n_pricey"
+        android:layout_alignStart="@+id/n_pricey" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
-        android:id="@+id/n_user_name"
+        android:id="@+id/n_pricey"
         android:layout_marginTop="28dp"
         android:layout_below="@+id/nname"
         android:layout_centerHorizontal="true" />
@@ -40,9 +40,9 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
-        android:id="@+id/n_user_pass"
+        android:id="@+id/n_category"
         android:layout_marginTop="36dp"
-        android:layout_below="@+id/n_user_name"
+        android:layout_below="@+id/n_pricey"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -50,9 +50,9 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
-        android:id="@+id/n_img_loc"
+        android:id="@+id/n_location"
         android:layout_marginTop="32dp"
-        android:layout_below="@+id/n_user_pass"
+        android:layout_below="@+id/n_category"
         android:layout_centerHorizontal="true" />
 
     <ImageView
@@ -63,6 +63,15 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="39dp" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/n_contact"
+        android:layout_below="@+id/n_location"
+        android:layout_marginTop="32dp"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>

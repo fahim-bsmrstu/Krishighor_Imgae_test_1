@@ -143,8 +143,10 @@ public class MainActivity extends AppCompatActivity {
                     ProductModel productModel = new ProductModel();
 
                     productModel.setName(finalObject.getString("name"));
-                    productModel.setUser_name(finalObject.getString("user_name"));
-                    productModel.setUser_pass(finalObject.getString("user_pass"));
+                    productModel.setPrice(finalObject.getString("price"));
+                    productModel.setCategory(finalObject.getString("category"));
+                    productModel.setLocation(finalObject.getString("location"));
+                    productModel.setContact(finalObject.getString("contact"));
                     productModel.setImg_loc(finalObject.getString("img_loc"));
 
 
@@ -200,8 +202,10 @@ public class MainActivity extends AppCompatActivity {
 
                     Intent i = new Intent(getApplicationContext(),ProductPage.class);
                     i.putExtra("name",item.getName());
-                    i.putExtra("user_name",item.getUser_name());
-                    i.putExtra("user_pass",item.getUser_pass());
+                    i.putExtra("price",item.getPrice());
+                    i.putExtra("category",item.getCategory());
+                    i.putExtra("location",item.getLocation());
+                    i.putExtra("contact",item.getContact());
                     i.putExtra("img_loc",item.getImg_loc());
 
                     startActivity(i);
@@ -219,7 +223,7 @@ public class MainActivity extends AppCompatActivity {
 
     public class ProductAdapter extends ArrayAdapter {
 
-        public String u_name,u_user_name,u_user_pass,u_img_loc;
+        public String u_name,u_price,u_category,u_location,u_contact,u_img_loc;
 
         private List<ProductModel> productList;
         private int resource;
@@ -254,30 +258,34 @@ public class MainActivity extends AppCompatActivity {
 
             ImageView im;
 
-            TextView namey,user_name,user_pass,img_loc;
+            TextView namey,price,category,location,contact;
 
             //RatingBar rBar;
 
 
             im = (ImageView)convertView.findViewById(R.id.imageView);
             namey = (TextView)convertView.findViewById(R.id.name);
-            user_name = (TextView)convertView.findViewById(R.id.user_name);
-            user_pass = (TextView)convertView.findViewById(R.id.user_pass);
-            img_loc = (TextView)convertView.findViewById(R.id.img_loc);
+            price = (TextView)convertView.findViewById(R.id.pr_price);
+            category = (TextView)convertView.findViewById(R.id.pr_cat);
+            location = (TextView)convertView.findViewById(R.id.pr_loc);
+            contact = (TextView)convertView.findViewById(R.id.pr_contact);
 
 
             // Then later, when you want to display image
             ImageLoader.getInstance().displayImage(productList.get(position).getImg_loc(), im); // Default options will be used
 
             u_name = productList.get(position).getName();
-            u_user_name = productList.get(position).getUser_name();
-            u_user_pass = productList.get(position).getUser_pass();
+            u_price = productList.get(position).getPrice();
+            u_category = productList.get(position).getCategory();
+            u_location = productList.get(position).getLocation();
+            u_contact = productList.get(position).getContact();
             u_img_loc = productList.get(position).getImg_loc();
 
             namey.setText(u_name);
-            user_name.setText(u_user_name);
-            user_pass.setText(u_user_pass);
-            img_loc.setText(u_img_loc);
+            price.setText(u_price);
+            category.setText(u_category);
+            location.setText(u_location);
+            contact.setText(u_contact);
 
 
             return convertView;
@@ -303,7 +311,7 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.refresh) {
 
-            new JSONTask().execute("http://192.168.159.1/dt/json_data.php");
+            new JSONTask().execute("http://192.168.159.1/vol/json_data.php");
 
             return true;
         }

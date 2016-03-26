@@ -26,8 +26,8 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 public class ProductPage extends BaseActivity implements ObservableScrollViewCallbacks {
 
-    TextView t1,t2,t3,t4;
-    String s1,s2,s3,s4;
+    TextView t1,t2,t3,t4,t5;
+    String s1,s2,s3,s4,s5,s6;
 
     protected View mHeader;
     protected int mFlexibleSpaceImageHeight;
@@ -73,20 +73,23 @@ public class ProductPage extends BaseActivity implements ObservableScrollViewCal
         t2 = (TextView)findViewById(R.id.container2);
         t3 = (TextView)findViewById(R.id.container3);
         t4 = (TextView)findViewById(R.id.container4);
+        t5 = (TextView)findViewById(R.id.container5);
 
         Intent i = getIntent();
 
         s1 = i.getStringExtra("name");
-        s2 = i.getStringExtra("user_name");
-        s3 = i.getStringExtra("user_pass");
-        s4 = i.getStringExtra("img_loc");
+        s2 = i.getStringExtra("price");
+        s3 = i.getStringExtra("category");
+        s4 = i.getStringExtra("location");
+        s5 = i.getStringExtra("contact");
+        s6 = i.getStringExtra("img_loc");
 
         // mListBackgroundView = findViewById(R.id.list_background);
 
         final ObservableScrollView scrollable = createScrollable();
 
         // Then later, when you want to display image
-        ImageLoader.getInstance().displayImage(s4,m); // Default options will be used
+        ImageLoader.getInstance().displayImage(s6,m); // Default options will be used
 
         ((TextView) findViewById(R.id.title)).setText(s1);
         setTitle(null);
@@ -97,6 +100,7 @@ public class ProductPage extends BaseActivity implements ObservableScrollViewCal
         t2.setText(s2);
         t3.setText(s3);
         t4.setText(s4);
+        t5.setText(s5);
 
         ScrollUtils.addOnGlobalLayoutListener((View) scrollable, new Runnable() {
             @Override

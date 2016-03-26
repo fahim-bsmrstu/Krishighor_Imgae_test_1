@@ -15,9 +15,9 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 public class Second_activity extends AppCompatActivity {
-    TextView name,user_name,user_pass,img_loc;
+    TextView name,price,category,location,contact;
 
-    String n_name,n_user_name,n_user_pass,n_img_loc;
+    String n_name,n_price,n_category,n_location,n_contact,n_img_loc;
     ImageView imm;
 
 
@@ -48,9 +48,10 @@ public class Second_activity extends AppCompatActivity {
 
 
         name = (TextView)findViewById(R.id.nname);
-        user_name = (TextView)findViewById(R.id.n_user_name);
-        user_pass = (TextView)findViewById(R.id.n_user_pass);
-        img_loc = (TextView)findViewById(R.id.n_img_loc);
+        price = (TextView)findViewById(R.id.n_pricey);
+        category = (TextView)findViewById(R.id.n_category);
+        location = (TextView)findViewById(R.id.n_location);
+        contact = (TextView)findViewById(R.id.n_contact);
         imm = (ImageView)findViewById(R.id.imageView2);
 
 
@@ -58,17 +59,20 @@ public class Second_activity extends AppCompatActivity {
         Intent i = getIntent();
 
         n_name = i.getStringExtra("name");
-        n_user_name = i.getStringExtra("user_name");
-        n_user_pass = i.getStringExtra("user_pass");
+        n_price = i.getStringExtra("price");
+        n_category = i.getStringExtra("category");
+        n_location = i.getStringExtra("location");
+        n_contact = i.getStringExtra("contact");
         n_img_loc = i.getStringExtra("img_loc");
 
 
         // Then later, when you want to display image
         ImageLoader.getInstance().displayImage(n_img_loc, imm); // Default options will be used
         name.setText(n_name);
-        user_name.setText(n_user_name);
-        user_pass.setText(n_user_pass);
-        img_loc.setText(n_img_loc);
+        price.setText(n_price);
+        category.setText(n_category);
+        location.setText(n_location);
+        contact.setText(n_contact);
 
 
 

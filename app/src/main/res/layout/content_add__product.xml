@@ -17,7 +17,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
+        android:id="@+id/e_name"
         android:hint="Product Name"/>
 
     <EditText
@@ -26,7 +26,7 @@
         android:inputType="textPersonName"
         android:hint="Product Price"
         android:ems="10"
-        android:id="@+id/editText2" />
+        android:id="@+id/e_price" />
 
     <EditText
         android:layout_width="match_parent"
@@ -34,12 +34,12 @@
         android:inputType="textPersonName"
         android:hint="Product Category"
         android:ems="10"
-        android:id="@+id/editText3" />
+        android:id="@+id/e_category" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText4"
+        android:id="@+id/e_loc"
         android:hint="Product Location"/>
 
     <EditText
@@ -48,7 +48,7 @@
         android:inputType="phone"
         android:hint="Contact Number"
         android:ems="10"
-        android:id="@+id/editText5" />
+        android:id="@+id/e_contact" />
 
 
     <Button

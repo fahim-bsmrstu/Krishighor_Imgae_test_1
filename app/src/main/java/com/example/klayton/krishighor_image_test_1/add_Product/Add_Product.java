@@ -31,14 +31,14 @@ import java.io.IOException;
 import java.util.Hashtable;
 import java.util.Map;
 
-public class Add_Product extends AppCompatActivity {
+public class Add_Product extends AppCompatActivity implements View.OnClickListener{
 
     private Button buttonChoose;
     private Button buttonUpload;
 
     private ImageView imageView;
 
-    private EditText editTextName;
+    private EditText e_name,e_price,e_category,e_loc,e_contact;
 
     private Bitmap bitmap;
 
@@ -48,6 +48,10 @@ public class Add_Product extends AppCompatActivity {
 
     private String KEY_IMAGE = "image";
     private String KEY_NAME = "name";
+    private String KEY_PRICE = "price";
+    private String KEY_CATEGORY = "category";
+    private String KEY_LOC = "loc";
+    private String KEY_CONTACT = "contact";
 
 
     @Override
@@ -69,28 +73,36 @@ public class Add_Product extends AppCompatActivity {
         buttonChoose = (Button) findViewById(R.id.buttonChoose);
         buttonUpload = (Button) findViewById(R.id.buttonUpload);
 
-        editTextName = (EditText) findViewById(R.id.editText);
+        e_name = (EditText) findViewById(R.id.e_name);
+        e_price = (EditText)findViewById(R.id.e_price);
+        e_category = (EditText)findViewById(R.id.e_category);
+        e_loc =(EditText)findViewById(R.id.e_loc);
+        e_contact = (EditText)findViewById(R.id.e_contact);
 
         imageView  = (ImageView) findViewById(R.id.imageView);
 
 
-        buttonChoose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showFileChooser();
-            }
-        });
+        buttonChoose.setOnClickListener(this);
+        buttonUpload.setOnClickListener(this);
 
-        buttonUpload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                uploadImage();
-            }
-        });
 
 
     }
 
+
+
+
+    @Override
+    public void onClick(View v) {
+
+        if(v == buttonChoose){
+            showFileChooser();
+        }
+
+        if(v == buttonUpload){
+            uploadImage();
+        }
+    }
 
     private void showFileChooser() {
         Intent intent = new Intent();
@@ -155,7 +167,11 @@ public class Add_Product extends AppCompatActivity {
                 String image = getStringImage(bitmap);
 
                 //Getting Image Name
-                String name = editTextName.getText().toString().trim();
+                String name = e_name.getText().toString().trim();
+                String price = e_price.getText().toString().trim();
+                String category = e_category.getText().toString().trim();
+                String loc = e_loc.getText().toString().trim();
+                String contact = e_contact.getText().toString().trim();
 
                 //Creating parameters
                 Map<String,String> params = new Hashtable<String, String>();
@@ -163,6 +179,10 @@ public class Add_Product extends AppCompatActivity {
                 //Adding parameters
                 params.put(KEY_IMAGE, image);
                 params.put(KEY_NAME, name);
+                params.put(KEY_PRICE,price);
+                params.put(KEY_CATEGORY,category);
+                params.put(KEY_LOC,loc);
+                params.put(KEY_CONTACT,contact);
 
                 //returning parameters
                 return params;

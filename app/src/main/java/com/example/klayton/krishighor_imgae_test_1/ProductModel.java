@@ -6,10 +6,11 @@ package com.example.klayton.krishighor_imgae_test_1;
 public class ProductModel {
 
     private String name;
-    private String user_name;
-    private String user_pass;
+    private String price;
+    private String category;
     private String img_loc;
-
+    private String location;
+    private String contact;
 
     public String getName() {
         return name;
@@ -19,20 +20,20 @@ public class ProductModel {
         this.name = name;
     }
 
-    public String getUser_name() {
-        return user_name;
+    public String getPrice() {
+        return price;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setPrice(String price) {
+        this.price = price;
     }
 
-    public String getUser_pass() {
-        return user_pass;
+    public String getCategory() {
+        return category;
     }
 
-    public void setUser_pass(String user_pass) {
-        this.user_pass = user_pass;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getImg_loc() {
@@ -41,5 +42,21 @@ public class ProductModel {
 
     public void setImg_loc(String img_loc) {
         this.img_loc = img_loc;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
     }
 }
